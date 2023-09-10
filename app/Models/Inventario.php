@@ -20,6 +20,7 @@ class Inventario extends Model
     public function bodega()
     {
         return $this->belongsTo(Bodega::class, 'bodega_id');
+        return $this->belongsToMany(Bodega::class)->withPivot('cantidad');
     }
 
     public function producto()
@@ -27,5 +28,4 @@ class Inventario extends Model
         return $this->belongsTo(Producto::class, 'producto_id');
     }
 
-    // Añade aquí cualquier otra relación o lógica adicional del modelo si es necesario.
 }

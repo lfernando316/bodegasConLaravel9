@@ -16,6 +16,10 @@ class Producto extends Model
         'descripcion',
         'estado',
     ];
-
-    // Añade aquí cualquier otra relación o lógica adicional del modelo si es necesario.
+    // En el modelo Producto
+    
+    public function inventarios()
+    {
+        return $this->hasManyThrough(Inventario::class, Bodega::class);
+    }
 }

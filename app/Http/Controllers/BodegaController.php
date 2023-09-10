@@ -13,6 +13,9 @@ class BodegaController extends Controller
         $bodegas = Bodega::orderBy('nombre')->get();
 
         return response()->json(['bodegas' => $bodegas]);
+
+        // ruta
+        // http://127.0.0.1:8000/api/bodegas
     }
 
     public function store(Request $request)

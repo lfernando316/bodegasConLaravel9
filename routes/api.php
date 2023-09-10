@@ -25,4 +25,6 @@ Route::get('/bodegas', [BodegaController::class, 'index']);
 
 Route::post('/crear_bodegas', [BodegaController::class, 'store']);
 
-Route::get('\productos', [ProductoController::class, 'index']);
+Route::get('/productos', [ProductoController::class, 'listarProductosPorTotal']);
+
+Route::post('/insertar_producto', [ProductoController::class, 'crearProductoConInventario']);
